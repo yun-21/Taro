@@ -1,7 +1,9 @@
 import React from 'react';
-const styles: React.CSSProperties = {
-  color: 'blue',
-  backgroundColor: 'red'
+const styles: {[key:string]:React.CSSProperties} = {
+  content : {
+    color: 'blue',
+    backgroundColor: 'red'
+  }
 };
 
 export default styles
