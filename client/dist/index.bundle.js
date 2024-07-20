@@ -36,7 +36,7 @@ eval("\n\nvar __importDefault = this && this.__importDefault || function (mod) {
   \************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar styles = {\n  color: 'blue',\n  backgroundColor: 'red'\n};\nexports[\"default\"] = styles;\n\n//# sourceURL=webpack://react_reprac/./src/styles.tsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar styles = {\n  content: {\n    color: 'blue',\n    backgroundColor: 'red'\n  }\n};\nexports[\"default\"] = styles;\n\n//# sourceURL=webpack://react_reprac/./src/styles.tsx?");
 
 /***/ }),
 
