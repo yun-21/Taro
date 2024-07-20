@@ -4,16 +4,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel src --out-dir dist --extensions .tsx && npx webpack --config webpack.config.js",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production",
-    "build:webpack": "npx webpack --config webpack.config.js"
+    "build:webpack": "npx webpack --config webpack.config.js",
+    "start": "webpack serve --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@types/react": "^18.3.3",
@@ -24,7 +27,8 @@
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.3",
     "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
     "react": "^18.3.1",

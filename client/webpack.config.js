@@ -6,6 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: `${name}.bundle.js`
   },
+  mode: "development", // 또는 'production'
   module: {
     rules: [
       {
@@ -26,5 +27,12 @@ module.exports = {
   },
   resolve: { //이행하다
     extensions: [".ts", ".js",".tsx",".jsx",".css"]
-  }
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    compress: true,
+    port: 3000,
+  },
 }
