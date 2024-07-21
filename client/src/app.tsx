@@ -29,8 +29,8 @@ const App: React.FC = () => {
       </div>
       <div id="content-body">
         <div id="loginInput">
-          <input type="text" value={state.idValue} onChange={state.idValue} id="idValue" placeholder='아이디를 적어주세요' />
-          <input type="text" value={state.pwdValue} onChange={state.pwdValue} id="pwdValue" placeholder='비밀번호를 적어주세요' />
+          <input type="text" value={state.idValue} onChange={(ele)=>setState((prevState)=>({...prevState, idValue:ele.target.value,}))} id="idValue" placeholder='아이디를 적어주세요' />
+          <input type="text" value={state.pwdValue} onChange={(ele)=>setState((prevState)=>({...prevState, pwdValue:ele.target.value,}))} id="pwdValue" placeholder='비밀번호를 적어주세요' />
         </div>
       </div>
       <div id="content-foot"></div>
