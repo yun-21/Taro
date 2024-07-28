@@ -8,10 +8,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "express": "^4.19.2"
-  },
   "devDependencies": {
+    "@types/node": "^20.14.12",
+    "express": "^4.19.2",
     "typescript": "^5.5.4"
   }
 }
