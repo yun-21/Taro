@@ -7,7 +7,9 @@ const styles: {[key:string]:React.CSSProperties} = {
     width:"100vw",
   },
   contentHead:{
-    textAlign: "center"
+    textAlign: "center",
+    // display:"flex"
+
   }
 };
 

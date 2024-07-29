@@ -24,7 +24,7 @@ const App: React.FC = () => {
   }
   return (
     <div id="content" style={styles.content}>
-      <div id="content-head">
+      <div id="content-head" style={styles.contentHead}>
         <div id="loginTitle">로그인</div>
       </div>
       <div id="content-body">
