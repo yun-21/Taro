@@ -23,7 +23,7 @@ const App: React.FC = () => {
     })
   }
   return (
-    <div id="content">
+    <div id="content" style={styles.content}>
       <div id="content-head">
         <div id="loginTitle">로그인</div>
       </div>
