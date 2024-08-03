@@ -10,33 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/app.tsx":
-/*!*********************!*\
-  !*** ./src/app.tsx ***!
-  \*********************/
+/***/ "./src/main/app.tsx":
+/*!**************************!*\
+  !*** ./src/main/app.tsx ***!
+  \**************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\n\nvar __importDefault = this && this.__importDefault || function (mod) {\n  return mod && mod.__esModule ? mod : {\n    \"default\": mod\n  };\n};\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar styles_1 = __importDefault(__webpack_require__(/*! ./styles */ \"./src/styles.tsx\")); // styles.ts 파일을 import\nvar App = function App() {\n  return (0, jsx_runtime_1.jsx)(\"div\", {\n    style: styles_1[\"default\"],\n    children: \"\\uD0C0\\uB85C \\uD504\\uB85C\\uC81D\\uD2B8\"\n  });\n};\nexports[\"default\"] = App;\n\n//# sourceURL=webpack://react_reprac/./src/app.tsx?");
+eval("\n\nfunction _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\nfunction _unsupportedIterableToArray(r, a) { if (r) { if (\"string\" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return \"Object\" === t && r.constructor && (t = r.constructor.name), \"Map\" === t || \"Set\" === t ? Array.from(r) : \"Arguments\" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }\nfunction _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }\nfunction _iterableToArrayLimit(r, l) { var t = null == r ? null : \"undefined\" != typeof Symbol && r[Symbol.iterator] || r[\"@@iterator\"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t[\"return\"] && (u = t[\"return\"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }\nfunction _arrayWithHoles(r) { if (Array.isArray(r)) return r; }\nvar __importDefault = this && this.__importDefault || function (mod) {\n  return mod && mod.__esModule ? mod : {\n    \"default\": mod\n  };\n};\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\n// src/App.tsx\nvar react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nvar styles_1 = __importDefault(__webpack_require__(/*! ../style/styles */ \"./src/style/styles.tsx\")); // styles.ts 파일을 import\nvar App = function App() {\n  var _ref = (0, react_1.useState)({\n      idValue: '',\n      pwdValue: '',\n      idValueServer: '',\n      pwdValueServer: ''\n    }),\n    _ref2 = _slicedToArray(_ref, 2),\n    state = _ref2[0],\n    setState = _ref2[1];\n  var send = function send() {\n    var data = {\n      idValue: state.idValue,\n      pwdValue: state.pwdValue\n    };\n    fetch('http://localhost:3001/send', {\n      method: \"POST\",\n      headers: {\n        \"Content-Type\": \"application/json\"\n      },\n      body: JSON.stringify(data)\n    });\n  };\n  return (0, jsx_runtime_1.jsxs)(\"div\", {\n    id: \"content\",\n    style: styles_1[\"default\"].content,\n    children: [(0, jsx_runtime_1.jsx)(\"div\", {\n      id: \"content-head\",\n      style: styles_1[\"default\"].contentHead,\n      children: (0, jsx_runtime_1.jsx)(\"div\", {\n        id: \"loginTitle\",\n        children: \"\\uB85C\\uADF8\\uC778\"\n      })\n    }), (0, jsx_runtime_1.jsxs)(\"div\", {\n      id: \"content-body\",\n      children: [(0, jsx_runtime_1.jsxs)(\"div\", {\n        id: \"loginInput\",\n        children: [(0, jsx_runtime_1.jsx)(\"input\", {\n          type: \"text\",\n          value: state.idValue,\n          onChange: function onChange(ele) {\n            return setState(function (prevState) {\n              return Object.assign(Object.assign({}, prevState), {\n                idValue: ele.target.value\n              });\n            });\n          },\n          id: \"idValue\",\n          placeholder: \"\\uC544\\uC774\\uB514\\uB97C \\uC801\\uC5B4\\uC8FC\\uC138\\uC694\"\n        }), (0, jsx_runtime_1.jsx)(\"input\", {\n          type: \"text\",\n          value: state.pwdValue,\n          onChange: function onChange(ele) {\n            return setState(function (prevState) {\n              return Object.assign(Object.assign({}, prevState), {\n                pwdValue: ele.target.value\n              });\n            });\n          },\n          id: \"pwdValue\",\n          placeholder: \"\\uBE44\\uBC00\\uBC88\\uD638\\uB97C \\uC801\\uC5B4\\uC8FC\\uC138\\uC694\"\n        })]\n      }), (0, jsx_runtime_1.jsx)(\"div\", {\n        children: (0, jsx_runtime_1.jsx)(\"button\", {\n          onClick: send,\n          children: \"\\uB85C\\uADF8\\uC778\"\n        })\n      })]\n    }), (0, jsx_runtime_1.jsx)(\"div\", {\n      id: \"content-foot\"\n    })]\n  });\n};\nexports[\"default\"] = App;\n\n//# sourceURL=webpack://react_reprac/./src/main/app.tsx?");
 
 /***/ }),
 
-/***/ "./src/index.tsx":
-/*!***********************!*\
-  !*** ./src/index.tsx ***!
-  \***********************/
+/***/ "./src/render/index.tsx":
+/*!******************************!*\
+  !*** ./src/render/index.tsx ***!
+  \******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\n\nvar __importDefault = this && this.__importDefault || function (mod) {\n  return mod && mod.__esModule ? mod : {\n    \"default\": mod\n  };\n};\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar app_1 = __importDefault(__webpack_require__(/*! ./app */ \"./src/app.tsx\"));\nvar client_1 = __importDefault(__webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\"));\nvar root = client_1[\"default\"].createRoot(document.getElementById('root'));\nroot.render((0, jsx_runtime_1.jsx)(app_1[\"default\"], {}));\n\n//# sourceURL=webpack://react_reprac/./src/index.tsx?");
+eval("\n\nvar __importDefault = this && this.__importDefault || function (mod) {\n  return mod && mod.__esModule ? mod : {\n    \"default\": mod\n  };\n};\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar app_1 = __importDefault(__webpack_require__(/*! ../main/app */ \"./src/main/app.tsx\"));\nvar client_1 = __importDefault(__webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\"));\nvar root = client_1[\"default\"].createRoot(document.getElementById('root'));\nroot.render((0, jsx_runtime_1.jsx)(app_1[\"default\"], {}));\n\n//# sourceURL=webpack://react_reprac/./src/render/index.tsx?");
 
 /***/ }),
 
-/***/ "./src/styles.tsx":
-/*!************************!*\
-  !*** ./src/styles.tsx ***!
-  \************************/
+/***/ "./src/style/styles.tsx":
+/*!******************************!*\
+  !*** ./src/style/styles.tsx ***!
+  \******************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar styles = {\n  content: {\n    color: 'blue',\n    backgroundColor: 'red'\n  }\n};\nexports[\"default\"] = styles;\n\n//# sourceURL=webpack://react_reprac/./src/styles.tsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nvar styles = {\n  content: {\n    display: \"flex\",\n    flexDirection: \"column\",\n    height: \"100vh\",\n    width: \"100vw\"\n  },\n  contentHead: {\n    textAlign: \"center\"\n    // display:\"flex\"\n  }\n};\nexports[\"default\"] = styles;\n\n//# sourceURL=webpack://react_reprac/./src/style/styles.tsx?");
 
 /***/ }),
 
@@ -174,7 +174,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.tsx");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/render/index.tsx");
 /******/ 	
 /******/ })()
 ;

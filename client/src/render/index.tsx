@@ -1,4 +1,4 @@
-import App from './app'
+import App from '../main/app'
 import ReactDOM from 'react-dom/client'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)

@@ -1,6 +1,6 @@
 // src/App.tsx
 import React, { useState } from 'react';
-import styles from './styles'; // styles.ts 파일을 import
+import styles from '../style/styles'; // styles.ts 파일을 import
 
 const App: React.FC = () => {
   const [state, setState] = useState({
