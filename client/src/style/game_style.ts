@@ -24,13 +24,10 @@ export const gameStyles: {[key:string]:React.CSSProperties} = {
     height:'100vh',
   },
   basket: {
+    position: 'absolute',
     bottom: '0', // 바닥에 붙이기
-    width: '10vw', // 바구니의 너비를 컨테이너에 맞게 설정
-    height: '30vh', // 바구니의 높이
-    backgroundColor: '#C5965E', 
-    boxSizing: 'border-box', // 패딩을 포함한 너비와 높이 계산
-    display: 'flex',
-    alignItems: 'center', // 수직 중앙 정렬
-    justifyContent: 'center', // 수평 중앙 정렬
+    right: '0', // 오른쪽에 붙이기
+    clipPath: 'polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%)', // 아랫변이 길고 윗변이 짧은 사다리꼴 모양
+    backgroundColor: '#C5965E',
   }
 }
