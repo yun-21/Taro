@@ -1,5 +1,8 @@
 import React from 'react';
 const styles: {[key:string]:React.CSSProperties} = {
+  title : {
+    textAlign: 'center'
+  },
   content : {
     display:"flex",
     flexDirection:"column",
@@ -43,6 +46,10 @@ const styles: {[key:string]:React.CSSProperties} = {
     height: '20vw',
     backgroundColor: 'lightgreen'
   },
+  imsiStyle : {
+    display:'flex',
+    flexDirection:'column'
+  }
 };
 
 export default styles
