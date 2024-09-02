@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './modal';
 import styles from '../style/styles';
+import { Link } from 'react-router-dom';
 
 const TaroMain: React.FC = () => {
     const [modalState, setModalState] = useState(false);
@@ -21,6 +22,11 @@ return (
         </div>
         <div onClick={setModal}>
             <div style={styles.threeCard}>3</div>
+        </div>
+        <div>
+            <Link to="/game">
+                운세 올리기
+            </Link>
         </div>
         <Modal modalState={modalState} onClose={initModal} />
     </div>
