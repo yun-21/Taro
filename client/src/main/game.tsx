@@ -120,19 +120,6 @@ const DropTarget: React.FC = () => {
       }
     </>
   );
-  // return (
-  //   <div style={gameStyles.allContent}>
-  //     <div style={gameStyles.stoneContent}>
-  //       {stones}
-  //     </div>
-  //     <div style={gameStyles.basketContent}>
-  //       <div style={basketStyle}></div>
-  //     </div>
-  //     <div style={{ position: 'absolute', top: 0, left: 0, padding: '10px' }}>
-  //       점수: {score}
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default DropTarget;
