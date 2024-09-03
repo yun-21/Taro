@@ -1,39 +1,80 @@
+// import React from 'react';
+// import { gameStyles } from '../style/game_style';
+
+// const Stone: React.FC = ({}) => {
+
+//   const stoneStyle: React.CSSProperties = {
+//     ...gameStyles.stone, // 기본 스타일을 가져오기
+//     top: `${top}px`,
+//     left: `${left}px`,
+//   };
+
+//   return(
+//     <div
+//       style={stoneStyle}></div>
+//   )
+// };
+// export default Stone;
+
+
+// import React from 'react';
+// import { useDrag } from 'react-dnd';
+
+// interface DragItem {
+//   id: string;
+//   text: string;
+// }
+
+// const DraggableItem: React.FC<{ id: string; text: string }> = ({ id, text }) => {
+//   const [{ isDragging }, drag] = useDrag<DragItem, void, { isDragging: boolean }>(() => ({
+//     type: 'ITEM',
+//     item: { id, text },
+//     collect: (monitor) => ({
+//       isDragging: monitor.isDragging(),
+//     }),
+//   }));
+
+//   return (
+//     <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }}>
+//       {text}
+//     </div>
+//   );
+// };
+
+// export default DraggableItem;
 import React from 'react';
+import { useDrag } from 'react-dnd';
 import { gameStyles } from '../style/game_style';
 
-interface StoneProps {
-  top: number;
-  left: number;
-  onDrop: (top: number, left: number) => void; // 새로운 위치를 전달하는 콜백 함수
+interface DragStone {
+  id: string;
 }
 
-const Stone: React.FC<StoneProps> = ({ top, left, onDrop}) => {
-  const dragStart = (e: React.DragEvent<HTMLDivElement>) => {
-    e.dataTransfer.setData('text/plain', 'stone'); // 드래그 시 데이터 설정
-  };
-  const drop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault(); // 기본 드롭 동작 방지
+const DraggableItem: React.FC<DragStone> = ({ id }) => {
+  const [{ isDragging }, drag] = useDrag<DragStone, void, { isDragging: boolean }>(() => ({
+    type: 'STONE',
+    item: { id },
+    collect: (monitor) => ({ isDragging: monitor.isDragging() })
+  }));
+  const containerWidth = window.innerWidth * 0.7;
+  const containerHeight = window.innerHeight;
+  const stoneHeight = 40; // 돌의 높이
+  const stoneWidth = 40; // 돌의 넓이
+  const top = containerHeight - stoneHeight - Math.random() * 30
+  const left = containerWidth - stoneWidth - Math.random() * (containerWidth - stoneWidth);
 
-    // 드롭된 위치를 계산
-    const newTop = e.clientY - 20; // Y 좌표 (돌의 중심을 맞추기 위해 높이의 반을 빼줌)
-    const newLeft = e.clientX - 20; // X 좌표 (돌의 중심을 맞추기 위해 너비의 반을 빼줌)
-
-    // 드래그 중인 돌이 새로운 위치로 이동되도록 onDrop 콜백 호출
-    onDrop(newTop, newLeft);
-  };
   const stoneStyle: React.CSSProperties = {
-    ...gameStyles.stone, // 기본 스타일을 가져오기
-    top: `${top}px`,
-    left: `${left}px`,
+    ...gameStyles.stone,
+    opacity: isDragging ? 0 : 1,
+    top: top,
+    left: left,
+    height:'40px',
+    width:'40px',
   };
 
-  return(
-    <div
-      draggable
-      onDragStart={dragStart}
-      onDragOver={(e) => e.preventDefault()} // 드래그가 요소 위를 지나가도록 허용
-      onDrop={drop}
-      style={stoneStyle}></div>
-  )
+  return (
+    <div ref={drag} style={stoneStyle}></div>
+  );
 };
-export default Stone;
+
+export default DraggableItem;
