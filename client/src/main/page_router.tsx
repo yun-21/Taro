@@ -7,7 +7,7 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<TaroMain />} />
-        <Route path="/game" element={<Game />} />
+        {/* <Route path="/game" element={<Game />} /> */}
       </Routes>
     </Router>
   );
