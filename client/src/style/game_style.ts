@@ -9,7 +9,7 @@ export const gameStyles: {[key:string]:React.CSSProperties} = {
   stone: {
     position: 'absolute',
     backgroundColor: 'gray',
-    borderRadius: '50%', // 타원형을 만들기 위해 설정
+    borderRadius: '60%', // 타원형을 만들기 위해 설정
   },
   allContent: {
     display: 'flex',
@@ -26,7 +26,6 @@ export const gameStyles: {[key:string]:React.CSSProperties} = {
     bottom: '0', // 바닥에 붙이기
     right: '0', // 오른쪽에 붙이기
     clipPath: 'polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%)', // 아랫변이 길고 윗변이 짧은 사다리꼴 모양
-    backgroundColor: '#C5965E',
     height:'80px',
     width:'100px'
   }
