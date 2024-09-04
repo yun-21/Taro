@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDrop } from 'react-dnd';
 import { gameStyles } from '../style/game_style';
 import DraggableItem from './stone_component';
-import DndContext from './dbcontent';
 
 interface DragStone {
   id: string;
@@ -45,11 +44,11 @@ const DropTarget: React.FC = () => {
 
   return (
     <>
-      <DndContext>
+      <div>
         {stone.map(item => (
           <DraggableItem key={item.id} id={item.id} top={item.top} left={item.left} />
         ))}
-      </DndContext>
+      </div>
       <div ref={drop} style={basketStyle}>
       </div>
       <div style={{ position: 'absolute', top: 0, left: 0, padding: '10px' }}>
