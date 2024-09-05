@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Modal from './modal';
 import styles from '../style/styles';
 import { Link } from 'react-router-dom';
+import DropTarget from './game';
 
 const TaroMain: React.FC = () => {
-    const [score, setScore] = useState(0);
     const [modalState, setModalState] = useState(false);
     const setModal = () => {
         setModalState(true);
@@ -12,10 +12,7 @@ const TaroMain: React.FC = () => {
     const initModal = () => {
         setModalState(false);
     }
-    const scoreChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setScore(Number(event.target.value));
-    };
-
+    
 return (
     <div>
         <h1 style={styles.title}>

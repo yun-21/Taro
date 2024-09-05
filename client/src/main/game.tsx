@@ -59,6 +59,7 @@ const DropTarget: React.FC = () => {
   const lunckBtn = () => {
     if (animalSelect === 'animal2') {
       setSelectResult('운세 10% 증가!');
+      setScore(50);
     } else {
       setSelectResult('안타깝네.. 더이상의 기회는 없어 돌아가');
     }
