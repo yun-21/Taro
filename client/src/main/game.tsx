@@ -51,15 +51,15 @@ const DropTarget: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setGameActive(false);
-    }, 6000);
+    }, 9000);
 
     return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
   }, []);
 
   const lunckBtn = () => {
     if (animalSelect === 'animal2') {
-      setSelectResult('운세 10% 증가!');
       setScore(50);
+      setSelectResult('운세 10% 증가!');
     } else {
       setSelectResult('안타깝네.. 더이상의 기회는 없어 돌아가');
     }
@@ -83,11 +83,13 @@ const DropTarget: React.FC = () => {
       }
         </>)
     } else if (score <= 50) {
-      return '손이 그럭저럭 빠른가보네요? 칭찬해~';
-    } else if (score <= 70 ){
-      return '꽤 하네? 조금만 더 했더라면~ 초고수가 될 수도 있었는데 말이지..';
+      if (selectResult === '') {
+        return '오? 조금만 더 했더라면~ 고수가 될 수도 있었는데 말이지.. 그래도 운세를 10%정도 올려주도록 하지..';
+      } else {
+        return `점수 50점으로 상향! ${selectResult}`;
+      }
     } else {
-      return '당신... 초고수잖아? 대단해.. 운세를 100% 올려주도록 하지..';
+      return '당신... 고수잖아? 대단해.. 운세를 40%나 올려주도록 하지..';
     }
   };
   return (
@@ -108,7 +110,7 @@ const DropTarget: React.FC = () => {
           <h1>게임종료</h1>
           <div>당신의 점수는 <b>{score}점</b></div>
           <div>{scoreMsg()}</div>
-          <Link to='/'>
+          <Link to={`/?score=${score}`}>
             <p>운세 보러가기</p>
           </Link>
           <Link to='/gameStart'>
