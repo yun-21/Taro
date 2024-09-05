@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import Modal from './modal';
 import styles from '../style/styles';
 import { Link } from 'react-router-dom';
-import DropTarget from './game';
+import { useLocation } from 'react-router-dom';
 
 const TaroMain: React.FC = () => {
+    const location = useLocation();
     const [modalState, setModalState] = useState(false);
+    const queryParams = new URLSearchParams(location.search);
+    const score = Number(queryParams.get('score'));
     const setModal = () => {
         setModalState(true);
     }
