@@ -24,6 +24,10 @@ const DropTarget: React.FC = () => {
   const [stone, setStone] = useState(stones);
   const [score, setScore] = useState(0);
   const [gameActive, setGameActive] = useState(true);
+
+  const [animalSelect, setanimalSelect] = useState<string>('option1');
+  const [selectResult, setSelectResult] = useState('');
+  
   const [{ isOver }, drop] = useDrop<DragStone, void, { isOver: boolean }>(() => ({
     accept: 'STONE',
     drop: (item) => {
@@ -52,9 +56,31 @@ const DropTarget: React.FC = () => {
     return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
   }, []);
 
+  const lunckBtn = () => {
+    if (animalSelect === 'animal2') {
+      setSelectResult('운세 10% 증가!');
+    } else {
+      setSelectResult('안타깝네.. 더이상의 기회는 없어 돌아가');
+    }
+  }
+
   const scoreMsg = () => {
     if (score <= 30) {
-      return '...하수에겐 할 말이 없네요';
+      return (
+      <>
+      {selectResult==='' ?
+      <>
+        <div>...하수에겐 할 말이 없지만 뭐 당신이 원해서 하수가 된 것은 아니니까.. 다른 기회를 줄까?</div>
+        <div>관리자가 제일 좋아하는 동물은?(맞춰봐.. 혹시 알아? 좋은 일이 발생할지..)</div>
+        <label><input type='radio' value="animal1" onChange={(e) => setanimalSelect(e.target.value)} checked={animalSelect === 'animal1'}/>고양이</label>
+        <label><input type='radio' value="animal2" onChange={(e) => setanimalSelect(e.target.value)} checked={animalSelect === 'animal2'}/>강아지</label>
+        <label><input type='radio' value="animal4" onChange={(e) => setanimalSelect(e.target.value)} checked={animalSelect === 'animal4'}/>사막여우</label>
+        <button onClick={lunckBtn} disabled={!animalSelect}>답 제출하기</button>
+        </>
+      :
+        <h2>{selectResult}</h2>
+      }
+        </>)
     } else if (score <= 50) {
       return '손이 그럭저럭 빠른가보네요? 칭찬해~';
     } else if (score <= 70 ){
