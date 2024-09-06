@@ -1,5 +1,12 @@
 import React from 'react';
 const styles: {[key:string]:React.CSSProperties} = {
+  mainAllContent : {
+    display:'flex',
+    flexDirection:'column',
+    height: '100vh',
+    width: '100vw',
+    backgroundColor:'red',
+  },
   title : {
     textAlign: 'center'
   },
@@ -16,7 +23,7 @@ const styles: {[key:string]:React.CSSProperties} = {
   allCard : {
     display: 'flex',
     marginLeft:'20px',
-    height: '100vh',
+    // height: '100vh',
     width: '100vw',
     alignItems:'center',
     justifyContent:'center',

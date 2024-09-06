@@ -17,7 +17,7 @@ const TaroMain: React.FC = () => {
     }
     
 return (
-    <div>
+    <div style={styles.mainAllContent}>
         <h1 style={styles.title}>
             오늘의 운세
         </h1>
@@ -33,13 +33,13 @@ return (
             </div>
             <div>
             </div>
+            <Modal modalState={modalState} onClose={initModal} score={score}/>
+        </div>
             <div>
                 <Link to="/gameStart">
                     운세 올리기 게임
                 </Link>
             </div>
-            <Modal modalState={modalState} onClose={initModal} score={score}/>
-        </div>
     </div>
 
 )
