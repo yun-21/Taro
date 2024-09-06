@@ -29,9 +29,15 @@ module.exports = {
     extensions: [".ts", ".js",".tsx",".jsx",".css"]
   },
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
+    static:
+    [
+      {
+        directory: path.resolve(__dirname, "src/public"),  // public 폴더 서빙
+      },
+      {
+        directory: path.resolve(__dirname, "dist"),  // dist 폴더도 서빙
+      },
+    ],
     compress: true,
     port: 3000,
   },
