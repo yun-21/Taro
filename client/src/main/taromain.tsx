@@ -35,11 +35,11 @@ return (
             </div>
             <Modal modalState={modalState} onClose={initModal} score={score}/>
         </div>
-            <div>
-                <Link to="/gameStart">
-                    운세 올리기 게임
-                </Link>
-            </div>
+        <div style={styles.footer}>
+            <Link to="/gameStart">
+                운세 올리기 게임
+            </Link>
+        </div>
     </div>
 
 )

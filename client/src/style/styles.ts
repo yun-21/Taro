@@ -5,22 +5,26 @@ const styles: {[key:string]:React.CSSProperties} = {
     flexDirection:'column',
     height: '100vh',
     width: '100vw',
-    backgroundColor:'red',
+    // backgroundColor: 'black',
   },
   title : {
-    textAlign: 'center'
+    textAlign: 'center',
+    height: '10%',
   },
+  //id (app)
   content : {
     display:"flex",
     flexDirection:"column",
     height:"100vh",
     width:"100vw",
   },
+  //id (app)
   contentHead:{
     textAlign: "center",
     // display:"flex"
   },
   allCard : {
+    height: '80%',
     display: 'flex',
     marginLeft:'20px',
     // height: '100vh',
@@ -53,9 +57,9 @@ const styles: {[key:string]:React.CSSProperties} = {
     height: '20vw',
     backgroundColor: 'lightgreen'
   },
-  imsiStyle : {
-    display:'flex',
-    flexDirection:'column'
+  footer : {
+    height:'10%',
+    
   }
 };
 
