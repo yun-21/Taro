@@ -1,40 +1,36 @@
 import modalStyles from "../style/modal_style";
 import React from 'react';
+import { allCard } from "./literal";
 
 type ModalProps = {
   modalState: boolean;
   onClose: () => void;
   score: number;
+  selectedCard: string; // 선택한 카드 타입 전달
 };
 
 // Modal 컴포넌트 정의
-const Modal: React.FC<ModalProps> = ({ modalState, onClose, score }) => {
+const Modal: React.FC<ModalProps> = ({ modalState, onClose, score, selectedCard }) => {
   if (!modalState) {
     return null; // show가 false일 때는 아무것도 렌더링하지 않음
   }
 
   function randomTaro(): string {
-    // if (score >= 80) {
-    //   const succes = ["오늘은 먹을 복이 있으신 것 깉습니다.", "빨간색 구두가 행운을 불러올 것 같습니다.", "모자가 오늘의 행운의 아이템입니다.", "달을 보면 좋은 일이.."];
-    //   const randomIndex = Math.floor(Math.random() * succes.length);
-    //   return succes[randomIndex];
-    // } else {
-    //   const fail = ["오늘은 물도 조심히 마셔야겠습니다.", "건강을 유의하십시오.", "피곤함이 많이 몰려올 것 같습니다.", "금으로 된 물건을 지니고 다니시면 불운이 사라질 것 같습니다."]
-    //   const randomIndex = Math.floor(Math.random() * fail.length);
-    //   return fail[randomIndex];
-    // }
     if(score <= 30) {
-      const succes = ['크게 다칠 수도 있습니다.', '관절을 조심하세요.', ''];
-      const randomIndex = Math.floor(Math.random() * succes.length);
-      return succes[randomIndex];
+      const succes = allCard[30];
+      const selectedArray = succes[selectedCard as keyof typeof succes];
+      const randomIndex = Math.floor(Math.random() * selectedArray.length);
+      return selectedArray[randomIndex];
     } else if (score <= 50) {
-      const succes = ['50점'];
-      const randomIndex = Math.floor(Math.random() * succes.length);
-      return succes[randomIndex];
+      const succes = allCard[50];
+      const selectedArray = succes[selectedCard as keyof typeof succes];
+      const randomIndex = Math.floor(Math.random() * selectedArray.length);
+      return selectedArray[randomIndex];
     } else {
-      const succes = ['100점'];
-      const randomIndex = Math.floor(Math.random() * succes.length);
-      return succes[randomIndex];
+      const succes = allCard[100];
+      const selectedArray = succes[selectedCard as keyof typeof succes];
+      const randomIndex = Math.floor(Math.random() * selectedArray.length);
+      return selectedArray[randomIndex];
     }
   }
 
