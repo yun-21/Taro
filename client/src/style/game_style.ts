@@ -28,5 +28,59 @@ export const gameStyles: {[key:string]:React.CSSProperties} = {
     clipPath: 'polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%)', // 아랫변이 길고 윗변이 짧은 사다리꼴 모양
     height:'80px',
     width:'100px'
-  }
+  },
+  gameMainAll: {
+    display: 'flex',
+    flexDirection:'column',
+    height:'100vh',
+    width:'100vw',
+  },
+  gameTitle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '40px',
+    fontWeight: 'bold',
+  },
+  gameLinkCollection: {
+    display:'flex',
+    height:'100vh',
+    width:'100vw',
+    justifyContent:'flex-around',
+    alignItems:'center'
+  },
+  gameDescriptionAll : {
+    display:'flex',
+    flexDirection:'column',
+    height:'20%',
+    width:'50%',
+    alignItems:'center',
+  },
+  gameDescription: {
+    fontSize:'32px',
+    height:'100%',
+    fontWeight: 'bold',
+    marginTop:'40px',
+  },
+  gameBtnCollection: {
+    display: 'flex',
+    height:'20%',
+    flexDirection: 'column',
+    width:'50%',
+    alignItems:'center',
+  },
+  gameStart: {
+    fontSize: '28px',
+    height:'50%',
+    marginTop:'40px',
+    textDecoration:'none',
+    color : 'blue'
+  },
+  gameBack: {
+    fontSize: '28px',
+    height:'50%',
+    marginTop:'40px',
+    textDecoration:'none',
+    color : 'red'
+  },
 }
