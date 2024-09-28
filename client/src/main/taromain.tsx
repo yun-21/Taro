@@ -34,12 +34,10 @@ return (
             <div onClick={()=> setModal('threeCard')}>
                 <div style={styles.threeCard}>3</div>
             </div>
-            <div>
-            </div>
-            <Modal modalState={modalState} onClose={initModal} score={score} selectedCard={selectedCard} />
         </div>
+        <Modal modalState={modalState} onClose={initModal} score={score} selectedCard={selectedCard} />
         <div style={styles.footer}>
-            <Link to="/gameStart">
+            <Link to="/gameStart" style={styles.linkStyle}>
                 운세 올리기 게임
             </Link>
         </div>
