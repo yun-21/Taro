@@ -16,6 +16,7 @@ const Modal: React.FC<ModalProps> = ({ modalState, onClose, score, selectedCard 
   }
 
   function randomTaro(): string {
+    // 점수에 따른 랜덤 운세 말
     if(score <= 30) {
       const succes = allCard[30];
       const selectedArray = succes[selectedCard as keyof typeof succes];
