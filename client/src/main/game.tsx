@@ -3,6 +3,7 @@ import { useDrop } from 'react-dnd';
 import { gameStyles } from '../style/game_style';
 import DraggableItem from './stone_component';
 import { Link } from 'react-router-dom';
+import { gameEndStyles } from '../style/game_end_style';
 
 interface DragStone {
   id: string;
@@ -76,7 +77,7 @@ const DropTarget: React.FC = () => {
         <label><input type='radio' value="animal1" onChange={(e) => setanimalSelect(e.target.value)} checked={animalSelect === 'animal1'}/>고양이</label>
         <label><input type='radio' value="animal2" onChange={(e) => setanimalSelect(e.target.value)} checked={animalSelect === 'animal2'}/>강아지</label>
         <label><input type='radio' value="animal4" onChange={(e) => setanimalSelect(e.target.value)} checked={animalSelect === 'animal4'}/>사막여우</label>
-        <button onClick={lunckBtn} disabled={!animalSelect}>답 제출하기</button>
+        <button onClick={lunckBtn} disabled={!animalSelect} style={gameEndStyles.quizBtn}>제출하기</button>
         </>
       :
         <h2>{selectResult}</h2>
@@ -103,19 +104,23 @@ const DropTarget: React.FC = () => {
           </div>
           <div ref={drop} style={basketStyle}></div>
         
-          <div style={{ position: 'absolute', top: 0, left: 0, padding: '10px' }}>점수: {score}</div>
+          <div style={gameEndStyles.inGameScore}>점수: {score}</div>
         </>
         :
-        <div>
-          <h1>게임종료</h1>
-          <div>당신의 점수는 <b>{score}점</b></div>
-          <div>{scoreMsg()}</div>
-          <Link to={`/?score=${score}`}>
-            <p>운세 보러가기</p>
-          </Link>
-          <Link to='/gameStart'>
-            <p>게임 다시하기</p>
-          </Link>
+        <div style={{height:'100vh'}}>
+          <div style={gameEndStyles.gameEndTitle}>게임종료</div>
+          <div style={gameEndStyles.gameEndContent}>
+            <div style={gameEndStyles.gameEndScore}>당신의 점수는 <b>{score}점</b></div>
+            <div style={gameEndStyles.gameEndScoreMsg}>{scoreMsg()}</div>
+            <div style={gameEndStyles.gameEndLinks}>
+              <Link to={`/?score=${score}`} style={{textDecoration:"none", color:'blue'}}>
+                <p>운세 보러가기</p>
+              </Link>
+              <Link to='/gameStart' style={{textDecoration:"none", color:'red'}}>
+                <p>게임 다시하기</p>
+              </Link>
+            </div>
+          </div>
         </div>
       }
     </>
