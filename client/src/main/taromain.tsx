@@ -21,9 +21,9 @@ const TaroMain: React.FC = () => {
     
 return (
     <div style={styles.mainAllContent}>
-        <h1 style={styles.title}>
+        <div style={styles.title}>
             오늘의 운세
-        </h1>
+        </div>
         <div style={styles.allCard}>
             <div onClick={()=> setModal('oneCard')}>
                 <div style={styles.oneCard}>1</div>
