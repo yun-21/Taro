@@ -41,10 +41,11 @@ export const gameStyles: {[key:string]:React.CSSProperties} = {
     alignItems: 'center',
     fontSize: '40px',
     fontWeight: 'bold',
+    height:'10%',
   },
   gameLinkCollection: {
     display:'flex',
-    height:'100vh',
+    height:'90%',
     width:'100vw',
     justifyContent:'flex-around',
     alignItems:'center'
