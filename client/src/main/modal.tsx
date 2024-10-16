@@ -1,5 +1,5 @@
 import modalStyles from "../style/modal_style";
-import React from 'react';
+import React, { useState } from 'react';
 import { allCard } from "./literal";
 
 type ModalProps = {
@@ -11,11 +11,12 @@ type ModalProps = {
 
 // Modal 컴포넌트 정의
 const Modal: React.FC<ModalProps> = ({ modalState, onClose, score, selectedCard }) => {
+  const [behavior, setBehavior] = useState('');
   if (!modalState) {
     return null; // show가 false일 때는 아무것도 렌더링하지 않음
   }
 
-  function randomTaro(): string {
+  function randomTaro() {
     // 점수에 따른 랜덤 운세 말
     if(score <= 30) {
       const succes = allCard[30];
@@ -33,6 +34,16 @@ const Modal: React.FC<ModalProps> = ({ modalState, onClose, score, selectedCard 
       const randomIndex = Math.floor(Math.random() * selectedArray.length);
       return selectedArray[randomIndex];
     }
+  //   return fetch("http://localhost:3001/behavior", {
+  //     method: 'POST'
+  //   })
+  //   .then((res)=>{
+  //     return res.json()
+  //   })
+  //   .then((data)=>{
+  //     setBehavior(data);
+  //   })
+  //   .catch((err) => console.log(err))
   }
 
   return (
