@@ -20,19 +20,22 @@ const Modal: React.FC<ModalProps> = ({ modalState, onClose, score, selectedCard 
     // 점수에 따른 랜덤 운세 말
     if(score <= 30) {
       const succes = allCard[30];
-      const selectedArray = succes[selectedCard as keyof typeof succes];
-      const randomIndex = Math.floor(Math.random() * selectedArray.length);
-      return selectedArray[randomIndex];
+      const select = 'oneCard';
+      const selectArray = succes[select];
+      const randomIndex = Math.floor(Math.random() * selectArray.length);
+      return selectArray[randomIndex];
     } else if (score <= 50) {
       const succes = allCard[50];
-      const selectedArray = succes[selectedCard as keyof typeof succes];
-      const randomIndex = Math.floor(Math.random() * selectedArray.length);
-      return selectedArray[randomIndex];
+      const select = 'twoCard';
+      const selectArray = succes[select];
+      const randomIndex = Math.floor(Math.random() * selectArray.length);
+      return selectArray[randomIndex];
     } else {
       const succes = allCard[100];
-      const selectedArray = succes[selectedCard as keyof typeof succes];
-      const randomIndex = Math.floor(Math.random() * selectedArray.length);
-      return selectedArray[randomIndex];
+      const select = 'threeCard';
+      const selectArray = succes[select];
+      const randomIndex = Math.floor(Math.random() * selectArray.length);
+      return selectArray[randomIndex];
     }
   //   return fetch("http://localhost:3001/behavior", {
   //     method: 'POST'
